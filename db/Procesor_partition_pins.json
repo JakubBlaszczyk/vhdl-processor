@@ -1,0 +1,189 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Salu[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Salu[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Salu[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Salu[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Salu[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Sbb[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Sbb[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Sbb[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Sbb[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Sbb[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Sbc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Sba[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Sba[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Sba[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Sba[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Sba[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Sid[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Sid[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Sa[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Sa[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LDF",
+					"strict" : false
+				},
+				{
+					"name" : "Smar",
+					"strict" : false
+				},
+				{
+					"name" : "Smbr",
+					"strict" : false
+				},
+				{
+					"name" : "WR",
+					"strict" : false
+				},
+				{
+					"name" : "RD",
+					"strict" : false
+				},
+				{
+					"name" : "MIO",
+					"strict" : false
+				},
+				{
+					"name" : "IR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[13]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[14]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[15]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[12]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[11]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[10]",
+					"strict" : false
+				},
+				{
+					"name" : "C",
+					"strict" : false
+				},
+				{
+					"name" : "S",
+					"strict" : false
+				},
+				{
+					"name" : "Z",
+					"strict" : false
+				},
+				{
+					"name" : "IR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "INT",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

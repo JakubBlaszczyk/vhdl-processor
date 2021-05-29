@@ -1,0 +1,15 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+entity procesor is
+
+
+end procesor;
+
+architecture arch of procesor is
+
+
+begin
+
+end arch; 
