@@ -56,11 +56,11 @@ ARCHITECTURE arch OF procesor IS
         PORT (
             clk : IN STD_LOGIC;
             IR : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-            reset, C, Z, S, INT, Sinternal : IN STD_LOGIC;
+            reset, C, Z, S, INT : IN STD_LOGIC;
             Salu, Sbb, Sbc, Sba : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
             Sid : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
             Sa, Sseg : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-            LDF, Smar, Smbr, WR, RD, INTA, MIO : OUT STD_LOGIC
+            LDF, Smar, Smbr, WR, RD, INTA, MIO, Sinternal : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -124,7 +124,7 @@ BEGIN
         Z => Z,
         S => S,
         INT => INT,
-		  Sinternal => Sinternal,
+		  
         Salu => Salu,
         Sbb => Sbb,
         Sbc => Sbc,
@@ -138,6 +138,7 @@ BEGIN
         WR => WR,
         RD => RD,
         INTA => INTA,
-        MIO => MIO);
+        MIO => MIO,
+		  Sinternal => Sinternal);
 
 END arch;

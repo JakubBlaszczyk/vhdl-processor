@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Procesor
-Thu May 27 13:05:44 2021
+Mon May 31 12:12:53 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -13,13 +13,12 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |Jednostka_Sterujaca|state
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -46,14 +45,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 27 13:05:44 2021       ;
+; Analysis & Synthesis Status     ; Successful - Mon May 31 12:12:53 2021       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; Procesor                                    ;
-; Top-level Entity Name           ; Jednostka_Sterujaca                         ;
+; Top-level Entity Name           ; MMU                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 61                                          ;
-; Total pins                      ; 57                                          ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 109                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -66,91 +65,91 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------+---------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                              ;
-+---------------------------------------------------------------------------------+---------------------+--------------------+
-; Option                                                                          ; Setting             ; Default Value      ;
-+---------------------------------------------------------------------------------+---------------------+--------------------+
-; Device                                                                          ; 5CSEMA5F31C6        ;                    ;
-; Top-level entity name                                                           ; Jednostka_Sterujaca ; Procesor           ;
-; Family name                                                                     ; Cyclone V           ; Cyclone V          ;
-; Use smart compilation                                                           ; Off                 ; Off                ;
-; Enable parallel Assembler and Timing Analyzer during compilation                ; On                  ; On                 ;
-; Enable compact report table                                                     ; Off                 ; Off                ;
-; Restructure Multiplexers                                                        ; Auto                ; Auto               ;
-; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                 ; Off                ;
-; Create Debugging Nodes for IP Cores                                             ; Off                 ; Off                ;
-; Preserve fewer node names                                                       ; On                  ; On                 ;
-; Intel FPGA IP Evaluation Mode                                                   ; Enable              ; Enable             ;
-; Verilog Version                                                                 ; Verilog_2001        ; Verilog_2001       ;
-; VHDL Version                                                                    ; VHDL_1993           ; VHDL_1993          ;
-; State Machine Processing                                                        ; Auto                ; Auto               ;
-; Safe State Machine                                                              ; Off                 ; Off                ;
-; Extract Verilog State Machines                                                  ; On                  ; On                 ;
-; Extract VHDL State Machines                                                     ; On                  ; On                 ;
-; Ignore Verilog initial constructs                                               ; Off                 ; Off                ;
-; Iteration limit for constant Verilog loops                                      ; 5000                ; 5000               ;
-; Iteration limit for non-constant Verilog loops                                  ; 250                 ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                         ; On                  ; On                 ;
-; Infer RAMs from Raw Logic                                                       ; On                  ; On                 ;
-; Parallel Synthesis                                                              ; On                  ; On                 ;
-; DSP Block Balancing                                                             ; Auto                ; Auto               ;
-; NOT Gate Push-Back                                                              ; On                  ; On                 ;
-; Power-Up Don't Care                                                             ; On                  ; On                 ;
-; Remove Redundant Logic Cells                                                    ; Off                 ; Off                ;
-; Remove Duplicate Registers                                                      ; On                  ; On                 ;
-; Ignore CARRY Buffers                                                            ; Off                 ; Off                ;
-; Ignore CASCADE Buffers                                                          ; Off                 ; Off                ;
-; Ignore GLOBAL Buffers                                                           ; Off                 ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                       ; Off                 ; Off                ;
-; Ignore LCELL Buffers                                                            ; Off                 ; Off                ;
-; Ignore SOFT Buffers                                                             ; On                  ; On                 ;
-; Limit AHDL Integers to 32 Bits                                                  ; Off                 ; Off                ;
-; Optimization Technique                                                          ; Balanced            ; Balanced           ;
-; Carry Chain Length                                                              ; 70                  ; 70                 ;
-; Auto Carry Chains                                                               ; On                  ; On                 ;
-; Auto Open-Drain Pins                                                            ; On                  ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                           ; Off                 ; Off                ;
-; Auto ROM Replacement                                                            ; On                  ; On                 ;
-; Auto RAM Replacement                                                            ; On                  ; On                 ;
-; Auto DSP Block Replacement                                                      ; On                  ; On                 ;
-; Auto Shift Register Replacement                                                 ; Auto                ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                                 ; Auto                ; Auto               ;
-; Auto Clock Enable Replacement                                                   ; On                  ; On                 ;
-; Strict RAM Replacement                                                          ; Off                 ; Off                ;
-; Allow Synchronous Control Signals                                               ; On                  ; On                 ;
-; Force Use of Synchronous Clear Signals                                          ; Off                 ; Off                ;
-; Auto Resource Sharing                                                           ; Off                 ; Off                ;
-; Allow Any RAM Size For Recognition                                              ; Off                 ; Off                ;
-; Allow Any ROM Size For Recognition                                              ; Off                 ; Off                ;
-; Allow Any Shift Register Size For Recognition                                   ; Off                 ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                             ; On                  ; On                 ;
-; Ignore translate_off and synthesis_off directives                               ; Off                 ; Off                ;
-; Timing-Driven Synthesis                                                         ; On                  ; On                 ;
-; Report Parameter Settings                                                       ; On                  ; On                 ;
-; Report Source Assignments                                                       ; On                  ; On                 ;
-; Report Connectivity Checks                                                      ; On                  ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                              ; Off                 ; Off                ;
-; Synchronization Register Chain Length                                           ; 3                   ; 3                  ;
-; Power Optimization During Synthesis                                             ; Normal compilation  ; Normal compilation ;
-; HDL message level                                                               ; Level2              ; Level2             ;
-; Suppress Register Optimization Related Messages                                 ; Off                 ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                        ; 5000                ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                       ; 100                 ; 100                ;
-; Clock MUX Protection                                                            ; On                  ; On                 ;
-; Auto Gated Clock Conversion                                                     ; Off                 ; Off                ;
-; Block Design Naming                                                             ; Auto                ; Auto               ;
-; SDC constraint protection                                                       ; Off                 ; Off                ;
-; Synthesis Effort                                                                ; Auto                ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                  ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                            ; Off                 ; Off                ;
-; Analysis & Synthesis Message Level                                              ; Medium              ; Medium             ;
-; Disable Register Merging Across Hierarchies                                     ; Auto                ; Auto               ;
-; Resource Aware Inference For Block RAM                                          ; On                  ; On                 ;
-; Automatic Parallel Synthesis                                                    ; On                  ; On                 ;
-; Partial Reconfiguration Bitstream ID                                            ; Off                 ; Off                ;
-+---------------------------------------------------------------------------------+---------------------+--------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; MMU                ; Procesor           ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
 +------------------------------------------+
@@ -170,13 +169,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                  ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
-; Jednostka_Sterujaca.vhd          ; yes             ; User VHDL File  ; C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                  ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+; MMU.vhd                          ; yes             ; User VHDL File  ; C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------+
@@ -184,119 +183,146 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimate of Logic utilization (ALMs needed) ; 149           ;
+; Estimate of Logic utilization (ALMs needed) ; 152           ;
 ;                                             ;               ;
-; Combinational ALUT usage for logic          ; 199           ;
+; Combinational ALUT usage for logic          ; 224           ;
 ;     -- 7 input functions                    ; 0             ;
-;     -- 6 input functions                    ; 97            ;
-;     -- 5 input functions                    ; 46            ;
-;     -- 4 input functions                    ; 32            ;
-;     -- <=3 input functions                  ; 24            ;
+;     -- 6 input functions                    ; 80            ;
+;     -- 5 input functions                    ; 19            ;
+;     -- 4 input functions                    ; 2             ;
+;     -- <=3 input functions                  ; 123           ;
 ;                                             ;               ;
-; Dedicated logic registers                   ; 61            ;
+; Dedicated logic registers                   ; 0             ;
 ;                                             ;               ;
-; I/O pins                                    ; 57            ;
+; I/O pins                                    ; 109           ;
 ;                                             ;               ;
 ; Total DSP Blocks                            ; 0             ;
 ;                                             ;               ;
-; Maximum fan-out node                        ; state.mDecode ;
-; Maximum fan-out                             ; 66            ;
-; Total fan-out                               ; 1266          ;
-; Average fan-out                             ; 3.39          ;
+; Maximum fan-out node                        ; Sseg[1]~input ;
+; Maximum fan-out                             ; 57            ;
+; Total fan-out                               ; 1143          ;
+; Average fan-out                             ; 2.50          ;
 +---------------------------------------------+---------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                             ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+---------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Entity Name         ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+---------------------+--------------+
-; |Jednostka_Sterujaca       ; 199 (199)           ; 61 (61)                   ; 0                 ; 0          ; 57   ; 0            ; |Jednostka_Sterujaca ; Jednostka_Sterujaca ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |MMU                       ; 224 (224)           ; 0 (0)                     ; 0                 ; 0          ; 109  ; 0            ; |MMU                ; MMU         ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Jednostka_Sterujaca|state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
-+------------------+-----------+-----------+-----------+----------------+--------------+-------------+--------------+-------------+--------------+--------------+--------------+--------------+-----------+--------------+------------------+------------------+-----------+--------------+-------------+--------------+--------------+--------------+--------------+-----------+---------------+----------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+-------------+------------+-------------+------------+-------------+-------------+-------------+-------------+---------------+--------------+------------+------------+------------+------------+------------+------------+-------------+-------------+-------------+-------------+-------------+-------------+--------------+--------------+--------------+--------------+-------------+------------+---------------+--------------+
-; Name             ; state.mSS ; state.mDS ; state.mCS ; state.mSegPrep ; state.mOut32 ; state.mIn32 ; state.mXor32 ; state.mOr32 ; state.mAnd32 ; state.mCmp32 ; state.mSub32 ; state.mAdd32 ; state.m82 ; state.Move32 ; state.mFetch32_2 ; state.mFetch32_1 ; state.m70 ; state.mXor16 ; state.mOr16 ; state.mAnd16 ; state.mCmp16 ; state.mSub16 ; state.mAdd16 ; state.m62 ; state.mMove16 ; state.mFetch16 ; state.mLJump3 ; state.mLJump2 ; state.mLJump1 ; state.mLJump0 ; state.mSJump2 ; state.mSJump1 ; state.mSJump0 ; state.mOutR ; state.mInR ; state.mXorR ; state.mOrR ; state.mAndR ; state.mCmpR ; state.mSubR ; state.mAddR ; state.mMoveRM ; state.mMoveR ; state.mShl ; state.mShr ; state.mNot ; state.mDec ; state.mInc ; state.mNeg ; state.mPop1 ; state.mPop0 ; state.mPush ; state.mRet2 ; state.mRet1 ; state.mRet0 ; state.mCall3 ; state.mCall2 ; state.mCall1 ; state.mCall0 ; state.mWait ; state.mInt ; state.mDecode ; state.mFetch ;
-+------------------+-----------+-----------+-----------+----------------+--------------+-------------+--------------+-------------+--------------+--------------+--------------+--------------+-----------+--------------+------------------+------------------+-----------+--------------+-------------+--------------+--------------+--------------+--------------+-----------+---------------+----------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+-------------+------------+-------------+------------+-------------+-------------+-------------+-------------+---------------+--------------+------------+------------+------------+------------+------------+------------+-------------+-------------+-------------+-------------+-------------+-------------+--------------+--------------+--------------+--------------+-------------+------------+---------------+--------------+
-; state.mFetch     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 0            ;
-; state.mDecode    ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 1             ; 1            ;
-; state.mInt       ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 1          ; 0             ; 1            ;
-; state.mWait      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 1           ; 0          ; 0             ; 1            ;
-; state.mCall0     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 1            ; 0           ; 0          ; 0             ; 1            ;
-; state.mCall1     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 1            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mCall2     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 1            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mCall3     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mRet0      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mRet1      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mRet2      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mPush      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mPop0      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mPop1      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mNeg       ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mInc       ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mDec       ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mNot       ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mShr       ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mShl       ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mMoveR     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 1            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mMoveRM    ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 1             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mAddR      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 1           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mSubR      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 1           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mCmpR      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 1           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mAndR      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 1           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mOrR       ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 1          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mXorR      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 1           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mInR       ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 1          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mOutR      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mSJump0    ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mSJump1    ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mSJump2    ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mLJump0    ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mLJump1    ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mLJump2    ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mLJump3    ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mFetch16   ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 1              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mMove16    ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 1             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.m62        ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 1         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mAdd16     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 1            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mSub16     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 1            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mCmp16     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 1            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mAnd16     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 1            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mOr16      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 1           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mXor16     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 1            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.m70        ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 1         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mFetch32_1 ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 1                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mFetch32_2 ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 1                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.Move32     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 1            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.m82        ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 1         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mAdd32     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 1            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mSub32     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 1            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mCmp32     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 1            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mAnd32     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 1            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mOr32      ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 1           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mXor32     ; 0         ; 0         ; 0         ; 0              ; 0            ; 0           ; 1            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mIn32      ; 0         ; 0         ; 0         ; 0              ; 0            ; 1           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mOut32     ; 0         ; 0         ; 0         ; 0              ; 1            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mSegPrep   ; 0         ; 0         ; 0         ; 1              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mCS        ; 0         ; 0         ; 1         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mDS        ; 0         ; 1         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-; state.mSS        ; 1         ; 0         ; 0         ; 0              ; 0            ; 0           ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0                ; 0                ; 0         ; 0            ; 0           ; 0            ; 0            ; 0            ; 0            ; 0         ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0           ; 0          ; 0           ; 0          ; 0           ; 0           ; 0           ; 0           ; 0             ; 0            ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ; 0             ; 1            ;
-+------------------+-----------+-----------+-----------+----------------+--------------+-------------+--------------+-------------+--------------+--------------+--------------+--------------+-----------+--------------+------------------+------------------+-----------+--------------+-------------+--------------+--------------+--------------+--------------+-----------+---------------+----------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+-------------+------------+-------------+------------+-------------+-------------+-------------+-------------+---------------+--------------+------------+------------+------------+------------+------------+------------+-------------+-------------+-------------+-------------+-------------+-------------+--------------+--------------+--------------+--------------+-------------+------------+---------------+--------------+
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; state.mPop1                           ; Merged with state.m70                  ;
-; state.m70                             ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 2 ;                                        ;
-+---------------------------------------+----------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
++------------------------------------------------------+---------------------+------------------------+
+; MAR[0]                                               ; Smar                ; yes                    ;
+; MAR[1]                                               ; Smar                ; yes                    ;
+; MAR[2]                                               ; Smar                ; yes                    ;
+; MAR[3]                                               ; Smar                ; yes                    ;
+; MAR[4]                                               ; Smar                ; yes                    ;
+; MAR[5]                                               ; Smar                ; yes                    ;
+; MAR[6]                                               ; Smar                ; yes                    ;
+; MAR[7]                                               ; Smar                ; yes                    ;
+; MAR[8]                                               ; Smar                ; yes                    ;
+; MAR[9]                                               ; Smar                ; yes                    ;
+; MAR[10]                                              ; Smar                ; yes                    ;
+; MAR[11]                                              ; Smar                ; yes                    ;
+; MAR[12]                                              ; Smar                ; yes                    ;
+; MAR[13]                                              ; Smar                ; yes                    ;
+; MAR[14]                                              ; Smar                ; yes                    ;
+; MAR[15]                                              ; Smar                ; yes                    ;
+; MAR[16]                                              ; Smar                ; yes                    ;
+; MAR[17]                                              ; Smar                ; yes                    ;
+; MAR[18]                                              ; Smar                ; yes                    ;
+; MAR[19]                                              ; Smar                ; yes                    ;
+; MBRin[0]                                             ; MBRin[15]           ; yes                    ;
+; MBRin[1]                                             ; MBRin[15]           ; yes                    ;
+; MBRin[2]                                             ; MBRin[15]           ; yes                    ;
+; MBRin[3]                                             ; MBRin[15]           ; yes                    ;
+; MBRin[4]                                             ; MBRin[15]           ; yes                    ;
+; MBRin[5]                                             ; MBRin[15]           ; yes                    ;
+; MBRin[6]                                             ; MBRin[15]           ; yes                    ;
+; MBRin[7]                                             ; MBRin[15]           ; yes                    ;
+; MBRin[8]                                             ; MBRin[15]           ; yes                    ;
+; MBRin[9]                                             ; MBRin[15]           ; yes                    ;
+; MBRin[10]                                            ; MBRin[15]           ; yes                    ;
+; MBRin[11]                                            ; MBRin[15]           ; yes                    ;
+; MBRin[12]                                            ; MBRin[15]           ; yes                    ;
+; MBRin[13]                                            ; MBRin[15]           ; yes                    ;
+; MBRin[14]                                            ; MBRin[15]           ; yes                    ;
+; MBRin[15]                                            ; MBRin[15]           ; yes                    ;
+; D[0]$latch                                           ; D[0]                ; yes                    ;
+; D[0]_899                                             ; D[0]                ; yes                    ;
+; D[1]$latch                                           ; D[0]                ; yes                    ;
+; D[2]$latch                                           ; D[0]                ; yes                    ;
+; D[3]$latch                                           ; D[0]                ; yes                    ;
+; D[4]$latch                                           ; D[0]                ; yes                    ;
+; D[5]$latch                                           ; D[0]                ; yes                    ;
+; D[6]$latch                                           ; D[0]                ; yes                    ;
+; D[7]$latch                                           ; D[0]                ; yes                    ;
+; D[8]$latch                                           ; D[0]                ; yes                    ;
+; D[9]$latch                                           ; D[0]                ; yes                    ;
+; D[10]$latch                                          ; D[0]                ; yes                    ;
+; D[11]$latch                                          ; D[0]                ; yes                    ;
+; D[12]$latch                                          ; D[0]                ; yes                    ;
+; D[13]$latch                                          ; D[0]                ; yes                    ;
+; D[14]$latch                                          ; D[0]                ; yes                    ;
+; D[15]$latch                                          ; D[0]                ; yes                    ;
+; MBRout[0]                                            ; MBRout[0]           ; yes                    ;
+; CS[4]                                                ; CS[4]               ; yes                    ;
+; DS[4]                                                ; DS[4]               ; yes                    ;
+; SS[4]                                                ; SS[4]               ; yes                    ;
+; MBRout[1]                                            ; MBRout[0]           ; yes                    ;
+; CS[5]                                                ; CS[4]               ; yes                    ;
+; DS[5]                                                ; DS[4]               ; yes                    ;
+; SS[5]                                                ; SS[4]               ; yes                    ;
+; MBRout[2]                                            ; MBRout[0]           ; yes                    ;
+; CS[6]                                                ; CS[4]               ; yes                    ;
+; DS[6]                                                ; DS[4]               ; yes                    ;
+; SS[6]                                                ; SS[4]               ; yes                    ;
+; MBRout[3]                                            ; MBRout[0]           ; yes                    ;
+; CS[7]                                                ; CS[4]               ; yes                    ;
+; DS[7]                                                ; DS[4]               ; yes                    ;
+; SS[7]                                                ; SS[4]               ; yes                    ;
+; MBRout[4]                                            ; MBRout[0]           ; yes                    ;
+; CS[8]                                                ; CS[4]               ; yes                    ;
+; DS[8]                                                ; DS[4]               ; yes                    ;
+; SS[8]                                                ; SS[4]               ; yes                    ;
+; MBRout[5]                                            ; MBRout[0]           ; yes                    ;
+; CS[9]                                                ; CS[4]               ; yes                    ;
+; DS[9]                                                ; DS[4]               ; yes                    ;
+; SS[9]                                                ; SS[4]               ; yes                    ;
+; MBRout[6]                                            ; MBRout[0]           ; yes                    ;
+; CS[10]                                               ; CS[4]               ; yes                    ;
+; DS[10]                                               ; DS[4]               ; yes                    ;
+; SS[10]                                               ; SS[4]               ; yes                    ;
+; MBRout[7]                                            ; MBRout[0]           ; yes                    ;
+; CS[11]                                               ; CS[4]               ; yes                    ;
+; DS[11]                                               ; DS[4]               ; yes                    ;
+; SS[11]                                               ; SS[4]               ; yes                    ;
+; MBRout[8]                                            ; MBRout[0]           ; yes                    ;
+; CS[12]                                               ; CS[4]               ; yes                    ;
+; DS[12]                                               ; DS[4]               ; yes                    ;
+; SS[12]                                               ; SS[4]               ; yes                    ;
+; MBRout[9]                                            ; MBRout[0]           ; yes                    ;
+; CS[13]                                               ; CS[4]               ; yes                    ;
+; DS[13]                                               ; DS[4]               ; yes                    ;
+; SS[13]                                               ; SS[4]               ; yes                    ;
+; MBRout[10]                                           ; MBRout[0]           ; yes                    ;
+; CS[14]                                               ; CS[4]               ; yes                    ;
+; DS[14]                                               ; DS[4]               ; yes                    ;
+; SS[14]                                               ; SS[4]               ; yes                    ;
+; MBRout[11]                                           ; MBRout[0]           ; yes                    ;
+; CS[15]                                               ; CS[4]               ; yes                    ;
+; DS[15]                                               ; DS[4]               ; yes                    ;
+; Number of user-specified and inferred latches = 117  ;                     ;                        ;
++------------------------------------------------------+---------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -304,29 +330,24 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 61    ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 61    ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
-; 11:1               ; 2 bits    ; 14 LEs        ; 12 LEs               ; 2 LEs                  ; No         ; |Jednostka_Sterujaca|Selector60 ;
-; 17:1               ; 3 bits    ; 33 LEs        ; 18 LEs               ; 15 LEs                 ; No         ; |Jednostka_Sterujaca|Selector13 ;
-; 18:1               ; 5 bits    ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |Jednostka_Sterujaca|Selector59 ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; No         ; |Jednostka_Sterujaca|Selector43 ;
-; 25:1               ; 10 bits   ; 160 LEs       ; 110 LEs              ; 50 LEs                 ; No         ; |Jednostka_Sterujaca|Selector50 ;
-; 19:1               ; 2 bits    ; 24 LEs        ; 14 LEs               ; 10 LEs                 ; No         ; |Jednostka_Sterujaca|Selector4  ;
-; 19:1               ; 18 bits   ; 216 LEs       ; 126 LEs              ; 90 LEs                 ; No         ; |Jednostka_Sterujaca|Selector11 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |MMU|MBRout[11]            ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 64 LEs               ; 16 LEs                 ; No         ; |MMU|D[7]                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-----------------------------------------------------+
@@ -334,21 +355,18 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 61                          ;
-;     CLR               ; 61                          ;
-; arriav_lcell_comb     ; 202                         ;
-;     normal            ; 202                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 10                          ;
-;         3 data inputs ; 13                          ;
-;         4 data inputs ; 32                          ;
-;         5 data inputs ; 46                          ;
-;         6 data inputs ; 97                          ;
-; boundary_port         ; 57                          ;
+; arriav_io_obuf        ; 16                          ;
+; arriav_lcell_comb     ; 224                         ;
+;     normal            ; 224                         ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 119                         ;
+;         4 data inputs ; 2                           ;
+;         5 data inputs ; 19                          ;
+;         6 data inputs ; 80                          ;
+; boundary_port         ; 109                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.98                        ;
+; Average LUT depth     ; 2.19                        ;
 +-----------------------+-----------------------------+
 
 
@@ -357,7 +375,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -367,7 +385,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu May 27 13:05:28 2021
+    Info: Processing started: Mon May 31 12:12:34 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Procesor -c Procesor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -389,96 +407,324 @@ Info (12021): Found 2 design units, including 1 entities, in source file proceso
 Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
     Info (12022): Found design unit 1: ram-arch File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Ram.vhd Line: 15
     Info (12023): Found entity 1: ram File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Ram.vhd Line: 5
-Info (12127): Elaborating entity "Jednostka_Sterujaca" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(374): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 374
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(404): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 404
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(419): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 419
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(420): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 420
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(434): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 434
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(435): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 435
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(449): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 449
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(450): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 450
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(464): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 464
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(465): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 465
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(479): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 479
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(480): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 480
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(494): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 494
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(495): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 495
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(509): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 509
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(525): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 525
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(539): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 539
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(540): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 540
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(554): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 554
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(555): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 555
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(570): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 570
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(584): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 584
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(585): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 585
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(599): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 599
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(600): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 600
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(614): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 614
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(615): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 615
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(629): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 629
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(645): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 645
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(783): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 783
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(799): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 799
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(813): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 813
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(814): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 814
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(828): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 828
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(829): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 829
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(844): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 844
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(858): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 858
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(859): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 859
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(873): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 873
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(874): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 874
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(888): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 888
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(889): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 889
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(932): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 932
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(947): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 947
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(962): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 962
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(963): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 963
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(977): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 977
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(978): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 978
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(993): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 993
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(1007): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 1007
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(1008): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 1008
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(1022): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 1022
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(1023): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 1023
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(1037): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 1037
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(1038): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 1038
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(1052): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 1052
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(1053): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 1053
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(1067): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 1067
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(1068): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 1068
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(1081): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 1081
-Warning (10492): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(1082): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 1082
-Warning (10631): VHDL Process Statement warning at Jednostka_Sterujaca.vhd(208): inferring latch(es) for signal or variable "Sseg", which holds its previous value in one or more paths through the process File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 208
-Info (10041): Inferred latch for "Sseg[0]" at Jednostka_Sterujaca.vhd(208) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 208
-Info (10041): Inferred latch for "Sseg[1]" at Jednostka_Sterujaca.vhd(208) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 208
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "Sbc[1]" is stuck at GND File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 11
-    Warning (13410): Pin "Sbc[2]" is stuck at GND File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 11
-    Warning (13410): Pin "Sbc[3]" is stuck at GND File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 11
-    Warning (13410): Pin "Sbc[4]" is stuck at GND File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 11
-    Warning (13410): Pin "Sid[2]" is stuck at GND File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 12
-    Warning (13410): Pin "Sseg[0]" is stuck at GND File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 208
-    Warning (13410): Pin "Sseg[1]" is stuck at GND File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 208
-    Warning (13410): Pin "INTA" is stuck at GND File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 14
+Info (12127): Elaborating entity "MMU" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at MMU.vhd(41): signal "Sseg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at MMU.vhd(56): signal "Sinternal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Warning (10492): VHDL Process Statement warning at MMU.vhd(68): signal "Sinternal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at MMU.vhd(70): signal "Sseg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 70
+Warning (10492): VHDL Process Statement warning at MMU.vhd(78): signal "Sseg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at MMU.vhd(86): signal "Sseg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at MMU.vhd(96): signal "Sseg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at MMU.vhd(33): inferring latch(es) for signal or variable "MAR", which holds its previous value in one or more paths through the process File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Warning (10631): VHDL Process Statement warning at MMU.vhd(33): inferring latch(es) for signal or variable "MBRout", which holds its previous value in one or more paths through the process File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Warning (10631): VHDL Process Statement warning at MMU.vhd(33): inferring latch(es) for signal or variable "MBRin", which holds its previous value in one or more paths through the process File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Warning (10631): VHDL Process Statement warning at MMU.vhd(33): inferring latch(es) for signal or variable "D", which holds its previous value in one or more paths through the process File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Warning (10631): VHDL Process Statement warning at MMU.vhd(33): inferring latch(es) for signal or variable "CS", which holds its previous value in one or more paths through the process File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Warning (10631): VHDL Process Statement warning at MMU.vhd(33): inferring latch(es) for signal or variable "DS", which holds its previous value in one or more paths through the process File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Warning (10631): VHDL Process Statement warning at MMU.vhd(33): inferring latch(es) for signal or variable "SS", which holds its previous value in one or more paths through the process File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[0]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[1]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[2]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[3]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[4]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[5]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[6]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[7]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[8]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[9]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[10]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[11]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[12]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[13]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[14]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "D[15]" at MMU.vhd(33) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+Info (10041): Inferred latch for "SS[4]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[5]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[6]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[7]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[8]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[9]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[10]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[11]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[12]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[13]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[14]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[15]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[16]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[17]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[18]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "SS[19]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[4]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[5]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[6]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[7]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[8]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[9]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[10]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[11]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[12]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[13]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[14]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[15]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[16]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[17]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[18]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "DS[19]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[4]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[5]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[6]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[7]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[8]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[9]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[10]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[11]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[12]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[13]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[14]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[15]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[16]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[17]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[18]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "CS[19]" at MMU.vhd(95) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+Info (10041): Inferred latch for "MBRin[0]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[1]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[2]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[3]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[4]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[5]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[6]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[7]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[8]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[9]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[10]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[11]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[12]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[13]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[14]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRin[15]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[0]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[1]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[2]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[3]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[4]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[5]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[6]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[7]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[8]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[9]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[10]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[11]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[12]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[13]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[14]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MBRout[15]" at MMU.vhd(56) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+Info (10041): Inferred latch for "MAR[0]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[1]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[2]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[3]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[4]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[5]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[6]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[7]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[8]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[9]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[10]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[11]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[12]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[13]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[14]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[15]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[16]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[17]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[18]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Info (10041): Inferred latch for "MAR[19]" at MMU.vhd(40) File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 40
+Warning (13012): Latch D[0]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[0]_899 has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[1]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[2]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[3]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[4]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[5]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[6]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[7]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[8]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[9]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[10]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[11]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[12]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[13]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[14]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch D[15]$latch has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[0] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[4] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[4] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[4] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[1] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[5] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[5] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[5] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[2] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[6] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[6] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[6] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[3] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[7] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[7] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[7] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[4] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[8] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[8] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[8] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[5] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[9] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[9] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[9] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[6] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[10] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[10] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[10] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[7] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[11] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[11] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[11] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[8] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[12] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[12] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[12] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[9] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[13] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[13] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[13] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[10] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[14] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[14] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[14] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[11] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[15] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[15] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[15] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[12] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[16] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[16] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[16] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[13] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[17] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[17] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[17] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[14] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[18] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[18] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[18] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch MBRout[15] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 56
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Sinternal File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch CS[19] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch DS[19] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
+Warning (13012): Latch SS[19] has unsafe behavior File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 95
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal WRin File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 11
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "IR[5]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 8
-    Warning (15610): No output dependent on input pin "IR[6]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 8
-    Warning (15610): No output dependent on input pin "IR[7]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 8
-    Warning (15610): No output dependent on input pin "Sinternal" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/Jednostka_Sterujaca.vhd Line: 10
-Info (21057): Implemented 265 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 23 input pins
-    Info (21059): Implemented 34 output pins
-    Info (21061): Implemented 208 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 77 warnings
-    Info: Peak virtual memory: 4847 megabytes
-    Info: Processing ended: Thu May 27 13:05:44 2021
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:31
+Warning (21074): Design contains 12 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ADR[20]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "ADR[21]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "ADR[22]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "ADR[23]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "ADR[24]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "ADR[25]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "ADR[26]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "ADR[27]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "ADR[28]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "ADR[29]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "ADR[30]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 7
+    Warning (15610): No output dependent on input pin "ADR[31]" File: C:/Users/jabla/OneDrive/Studia/Semestr_IV/ASK/Projekt/MMU.vhd Line: 7
+Info (21057): Implemented 333 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 55 input pins
+    Info (21059): Implemented 38 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 224 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 190 warnings
+    Info: Peak virtual memory: 4848 megabytes
+    Info: Processing ended: Mon May 31 12:12:53 2021
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:30
 
 

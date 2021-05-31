@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Thu May 27 13:05:44 2021
+Analysis & Synthesis Status : Successful - Mon May 31 12:12:53 2021
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : Procesor
-Top-level Entity Name : Jednostka_Sterujaca
+Top-level Entity Name : MMU
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 61
-Total pins : 57
+Total registers : 0
+Total pins : 109
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
