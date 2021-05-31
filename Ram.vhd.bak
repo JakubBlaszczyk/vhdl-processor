@@ -1,9 +1,0 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-USE ieee.numeric_std.ALL;
-
-ENTITY procesor IS
-    PORT (
-        clk, reset : IN STD_LOGIC
-    );
-END procesor;

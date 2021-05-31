@@ -1,3 +1,7 @@
 db/*
 greybox_tmp/*
 output_files/*
+*bak
+c5_pin_model_dump.txt
+incremental_db/*
+simulation/*
