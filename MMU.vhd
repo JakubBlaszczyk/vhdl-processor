@@ -92,15 +92,6 @@ BEGIN
                END IF;
           END IF;
 
-          IF (Rdin = '0' AND Wrin = '0') THEN
-               CASE(Sseg) IS
-                    WHEN "01" => CS(19 DOWNTO 4) := DO;
-                    WHEN "10" => DS(19 DOWNTO 4) := DO;
-                    WHEN "11" => SS(19 DOWNTO 4) := DO;
-                    WHEN OTHERS => NULL;
-               END CASE;
-          END IF;
-
           DI <= MBRin;
           AD <= MAR;
           WR <= WRin;
