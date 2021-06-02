@@ -45,7 +45,7 @@ ARCHITECTURE arch OF procesor IS
           DO : IN std_logic_vector(15 DOWNTO 0);
           Smar, Smbr, WRin, RDin, Sinternal : IN STD_LOGIC;
 			 Sseg : in std_logic_vector(1 downto 0);
-          AD : OUT std_logic_vector (31 DOWNTO 0);
+          AD : OUT std_logic_vector (19 DOWNTO 0);
           D : INOUT std_logic_vector(15 DOWNTO 0);
           DI : OUT std_logic_vector(15 DOWNTO 0);
           WR, RD : OUT STD_LOGIC
@@ -75,7 +75,7 @@ ARCHITECTURE arch OF procesor IS
     SIGNAL BB, BC : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL LDF, C, Z, S : STD_LOGIC;
 
-    SIGNAL AD : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL AD : STD_LOGIC_VECTOR(19 DOWNTO 0);
     SIGNAL D : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL RDram, WRram, MIO, INTA, INT, Sinternal : STD_LOGIC;
 BEGIN
