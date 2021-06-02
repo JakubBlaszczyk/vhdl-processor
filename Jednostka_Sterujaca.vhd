@@ -33,7 +33,7 @@ ARCHITECTURE rtl OF Jednostka_Sterujaca IS
 	mPshSeg, -- get data onto D line
 	mPshSegCs, mPshSegDs, mPshSegSs, -- psh to stack
 	mPopSeg, -- Decrement SP
-	mPopCs, mPopDs, mPopSs, -- pop from stack
+	mPopCs, mPopDs, mPopSs); -- pop from stack
 	SIGNAL state : state_type;
 BEGIN
 	PROCESS (clk, reset)
@@ -90,7 +90,7 @@ BEGIN
 							CASE IR(12 DOWNTO 11) IS
 								WHEN "00" => state <= mMovSeg;
 								WHEN "01" => state <= mPopSeg;
-								WHEN "10" => state <= mPushSeg;
+								WHEN "10" => state <= mPshSeg;
 								WHEN OTHERS => state <= mFetch;
 						END CASE;
 						WHEN OTHERS => state <= mFetch;
@@ -208,11 +208,11 @@ BEGIN
 				WHEN mPopSeg => 
 					CASE (IR(10 DOWNTO 9)) IS
             WHEN "00" => state <= mFetch;
-						WHEN "01" => state <= mPopSegCs;
-						WHEN "10" => state <= mPopSegDs;
-						WHEN "11" => state <= mPopSegSs;
+						WHEN "01" => state <= mPopCs;
+						WHEN "10" => state <= mPopDs;
+						WHEN "11" => state <= mPopSs;
 				END CASE;
-				WHEN mPushSeg => 
+				WHEN mPshSeg => 
 					CASE (IR(10 DOWNTO 9)) IS
             WHEN "00" => state <= mFetch;
 						WHEN "01" => state <= mPshSegCs;
