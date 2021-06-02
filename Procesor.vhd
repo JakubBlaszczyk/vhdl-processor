@@ -41,6 +41,7 @@ ARCHITECTURE arch OF procesor IS
 
     COMPONENT MMU IS
         PORT (
+		  clk : in std_logic;
             ADR : IN std_logic_vector(31 DOWNTO 0);
           DO : IN std_logic_vector(15 DOWNTO 0);
           Smar, Smbr, WRin, RDin, Sinternal : IN STD_LOGIC;
@@ -104,6 +105,7 @@ BEGIN
         ADR => ADR,
         IRout => IR);
     mem: MMU PORT MAP(
+		  clk => clk,
         ADR => ADR,
         DO => DOBA,
         Smar => Smar,

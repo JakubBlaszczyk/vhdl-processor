@@ -249,7 +249,7 @@ BEGIN
          WHEN mDecode =>
             Sa <= "00";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "000";
             Sbc <= "00000";
             MIO <= '1';
@@ -266,7 +266,7 @@ BEGIN
          WHEN mWait =>
             Sa <= "00";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "000";
             Sbc <= "00000";
             MIO <= '1';
@@ -283,7 +283,7 @@ BEGIN
          WHEN mCall0 =>
             -- zapis stosu do mbr
             Sa <= "10";
-            Sba <= "00001";
+            Sba <= "00000";
             Sbb <= "01100";
             Sbc <= "00000";
             -- zwiększenie stosu
@@ -301,7 +301,7 @@ BEGIN
          WHEN mCall1 =>
             -- zapis stosu do mbr
             Sa <= "10";
-            Sba <= "00001";
+            Sba <= "00000";
             Sbb <= "01101";
             Sbc <= "00000";
             -- zwiększenie stosu
@@ -354,7 +354,7 @@ BEGIN
          WHEN mRet0 =>
             -- przygotowanie wskaźnika stosu
             Sa <= "00";
-            Sba <= "00001";
+            Sba <= "00000";
             Sbb <= "00000";
             Sbc <= "00000";
             Sid <= "010";
@@ -424,7 +424,7 @@ BEGIN
          WHEN mPop0 =>
             -- zmniejszenie wskaźnika stosu
             Sa <= "00";
-            Sba <= "00001";
+            Sba <= "00000";
             Sbb <= "00000";
             Sbc <= "00000";
             Sid <= "010";
@@ -577,7 +577,7 @@ BEGIN
             -- Mov RM, R
          WHEN mMoveRM =>
             Sa <= "00";
-            Sba <= "00001";
+            Sba <= "00000";
             Sbb <= IR(4 DOWNTO 0);
             Sbc <= "00000";
             Sid <= "000";
@@ -628,7 +628,7 @@ BEGIN
             -- Cmp, R, RM
          WHEN mCmpR =>
             Sa <= "00";
-            Sba <= "00001";
+            Sba <= "00000";
             Sbb <= IR(4 DOWNTO 0);
             Sbc <= "00000";
             Sid <= "000";
@@ -713,7 +713,7 @@ BEGIN
             -- OUT IO(AD), R
          WHEN mOutR =>
             Sa <= "00";
-            Sba <= "00001";
+            Sba <= "00000";
             Sbb <= IR(4 DOWNTO 0);
             Sbc <= "00000";
             Sid <= "000";
@@ -919,7 +919,7 @@ BEGIN
             -- Cmp, R, Temp
          WHEN mCmp16 =>
             Sa <= "00";
-            Sba <= "00001";
+            Sba <= "00000";
             Sbb <= IR(4 DOWNTO 0);
             Sbc <= "00001";
             Sid <= "000";
@@ -1037,7 +1037,7 @@ BEGIN
             -- Mov Addr, R
          WHEN mRAdd =>
             Sa <= "11";
-            Sba <= "00001";
+            Sba <= "00000";
             Sbb <= IR(4 DOWNTO 0);
             Sbc <= "00000";
             Sid <= "000";
@@ -1088,7 +1088,7 @@ BEGIN
             -- Cmp, R, TempAdd
          WHEN mCmp32 =>
             Sa <= "11";
-            Sba <= "00001";
+            Sba <= "00000";
             Sbb <= IR(4 DOWNTO 0);
             Sbc <= "00000";
             Sid <= "000";
@@ -1191,7 +1191,7 @@ BEGIN
          WHEN mMovSeg =>
             Sa <= "01";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "001";
             Sbc <= "00000";
             MIO <= '1';
@@ -1207,7 +1207,7 @@ BEGIN
          WHEN mMovSegCs =>
             Sa <= "00";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "000";
             Sbc <= "00000";
             MIO <= '1';
@@ -1223,7 +1223,7 @@ BEGIN
          WHEN mMovSegDs =>
             Sa <= "00";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "000";
             Sbc <= "00000";
             MIO <= '1';
@@ -1239,7 +1239,7 @@ BEGIN
          WHEN mMovSegSs =>
             Sa <= "00";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "000";
             Sbc <= "00000";
             MIO <= '1';
@@ -1255,7 +1255,7 @@ BEGIN
          WHEN mPshSeg =>
             Sa <= "10";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "001";
             Sbc <= "00000";
             MIO <= '1';
@@ -1271,7 +1271,7 @@ BEGIN
          WHEN mPshSegCs =>
             Sa <= "00";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "011";
             Sbc <= "00000";
             MIO <= '1';
@@ -1287,7 +1287,7 @@ BEGIN
          WHEN mPshSegDs =>
             Sa <= "00";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "011";
             Sbc <= "00000";
             MIO <= '1';
@@ -1303,7 +1303,7 @@ BEGIN
          WHEN mPshSegSs =>
             Sa <= "00";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "011";
             Sbc <= "00000";
             MIO <= '1';
@@ -1319,7 +1319,7 @@ BEGIN
          WHEN mPopSeg =>
             Sa <= "10";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "010";
             Sbc <= "00000";
             MIO <= '1';
@@ -1335,7 +1335,7 @@ BEGIN
          WHEN mPopCs =>
             Sa <= "00";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "001";
             Sbc <= "00000";
             MIO <= '1';
@@ -1351,7 +1351,7 @@ BEGIN
          WHEN mPopDs =>
             Sa <= "00";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "001";
             Sbc <= "00000";
             MIO <= '1';
@@ -1367,7 +1367,7 @@ BEGIN
          WHEN mPopSs =>
             Sa <= "00";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "001";
             Sbc <= "00000";
             MIO <= '1';
@@ -1384,7 +1384,7 @@ BEGIN
          WHEN OTHERS =>
             Sa <= "00";
             Sbb <= "00000";
-            Sba <= "00001";
+            Sba <= "00000";
             Sid <= "000";
             Sbc <= "00000";
             MIO <= '1';

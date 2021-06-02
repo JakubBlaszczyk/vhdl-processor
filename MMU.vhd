@@ -4,6 +4,7 @@ USE ieee.numeric_std.ALL;
 
 ENTITY MMU IS
      PORT (
+	  clk : in std_logic;
           ADR : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
           -- adres odczytu
           DO : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -30,13 +31,14 @@ END ENTITY;
 
 ARCHITECTURE rtl OF MMU IS
 BEGIN
-     PROCESS (Smar, ADR, Smbr, DO, D, WRin, RDin)
+     PROCESS (clk, Smar, ADR, Smbr, DO, Sseg, D, WRin, RDin, Sinternal)
           VARIABLE MBRin, MBRout : STD_LOGIC_VECTOR(15 DOWNTO 0);
           -- dane in, out
           VARIABLE MAR : STD_LOGIC_VECTOR(19 DOWNTO 0);
           -- adres
           VARIABLE CS, DS, SS : STD_LOGIC_VECTOR(19 DOWNTO 0);
      BEGIN
+	  IF (clk'event AND clk = '1') THEN
           IF (Smar = '1') THEN
                CASE (sseg) IS
                     WHEN "01" => 
@@ -89,9 +91,11 @@ BEGIN
                          WHEN "11" => D <= SS(19 downto 4);
                          WHEN OTHERS => D <= "ZZZZZZZZZZZZZZZZ";
                     END CASE;
+						 else 
+						 D <= "ZZZZZZZZZZZZZZZZ";
                END IF;
           END IF;
-
+end if;
           DI <= MBRin;
           AD <= MAR;
           WR <= WRin;
