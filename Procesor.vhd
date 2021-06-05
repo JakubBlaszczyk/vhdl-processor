@@ -64,6 +64,14 @@ ARCHITECTURE arch OF procesor IS
             LDF, Smar, Smbr, WR, RD, INTA, MIO, Sinternal : OUT STD_LOGIC
         );
     END COMPONENT;
+	 
+	 component Ram is 
+	 PORT (
+		clk : IN STD_LOGIC;
+		adr : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		we, re : IN STD_LOGIC;
+		data : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0));
+	 end component;
 
     SIGNAL Salu, Sbb, Sbc, Sba : STD_LOGIC_VECTOR(4 DOWNTO 0);
     SIGNAL Smar, Smbr, WR, RD : STD_LOGIC;
@@ -71,7 +79,7 @@ ARCHITECTURE arch OF procesor IS
     SIGNAL Sid : STD_LOGIC_VECTOR(2 DOWNTO 0);
     SIGNAL DI, DOBA : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL IR : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL ADR : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL ADR, ADRram : STD_LOGIC_VECTOR(31 DOWNTO 0);
 
     SIGNAL BB, BC : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL LDF, C, Z, S : STD_LOGIC;
@@ -107,7 +115,7 @@ BEGIN
         IRout => IR);
     mem : MMU PORT MAP(
         clk => clk,
-        ADR => ADR,
+        ADR => ADRram,
         DO => DOBA,
         Smar => Smar,
         Smbr => Smbr,
@@ -128,7 +136,6 @@ BEGIN
         Z => Z,
         S => S,
         INT => INT,
-
         Salu => Salu,
         Sbb => Sbb,
         Sbc => Sbc,
@@ -144,5 +151,12 @@ BEGIN
         INTA => INTA,
         MIO => MIO,
         Sinternal => Sinternal);
+	 r : Ram Port map(
+	   clk => clk,
+		adr => ADRram,
+		we => WRram,
+		re => RDram,
+		data => D
+	 );
 
 END arch;

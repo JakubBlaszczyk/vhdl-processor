@@ -976,7 +976,7 @@ BEGIN
             -- sczytanie danych
          WHEN mFetch32_1 =>
             Sa <= "01";
-            Sba <= "10000";
+            Sba <= "10001";
             Sbb <= "00000";
             Sbc <= "00000";
             Sid <= "001";
@@ -992,7 +992,7 @@ BEGIN
             INTA <= '0';
          WHEN mFetch32_2 =>
             Sa <= "01";
-            Sba <= "10001";
+            Sba <= "10000";
             Sbb <= "00000";
             Sbc <= "00000";
             Sid <= "001";
