@@ -4,8 +4,7 @@ USE ieee.numeric_std.ALL;
 
 ENTITY procesor IS
     PORT (
-        clk, reset, INT : IN STD_LOGIC;
-		  IRoutt : out std_logic_vector(15 downto 0)
+        clk, reset, INT : IN STD_LOGIC
     );
 END procesor;
 
@@ -65,14 +64,14 @@ ARCHITECTURE arch OF procesor IS
             LDF, Smar, Smbr, WR, RD, INTA, MIO, Sinternal : OUT STD_LOGIC
         );
     END COMPONENT;
-	 
-	 component Ram is 
-	 PORT (
-		clk : IN STD_LOGIC;
-		adr : IN STD_LOGIC_VECTOR(19 DOWNTO 0);
-		we, re : IN STD_LOGIC;
-		data : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0));
-	 end component;
+
+    COMPONENT Ram IS
+        PORT (
+            clk : IN STD_LOGIC;
+            adr : IN STD_LOGIC_VECTOR(19 DOWNTO 0);
+            we, re : IN STD_LOGIC;
+            data : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0));
+    END COMPONENT;
 
     SIGNAL Salu, Sbb, Sbc, Sba : STD_LOGIC_VECTOR(4 DOWNTO 0);
     SIGNAL Smar, Smbr, WR, RD : STD_LOGIC;
@@ -81,14 +80,13 @@ ARCHITECTURE arch OF procesor IS
     SIGNAL DI, DOBA : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL IR : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL ADR : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	 
+
     SIGNAL BB, BC : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL LDF, C, Z, S : STD_LOGIC;
 
     SIGNAL AD : STD_LOGIC_VECTOR(19 DOWNTO 0);
     SIGNAL D : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL RDram, WRram, MIO, INTA, Sinternal : STD_LOGIC;
-	 signal IRtemp : std_logic_vector(15 downto 0);
 BEGIN
 
     ar : ALU PORT MAP(
@@ -132,7 +130,7 @@ BEGIN
         WR => WRram, RD => RDram);
     js : Jednostka_Sterujaca PORT MAP(
         clk => clk,
-        IR => "0000000000000000",
+        IR => IR,
         reset => reset,
         C => C,
         Z => Z,
@@ -153,13 +151,12 @@ BEGIN
         INTA => INTA,
         MIO => MIO,
         Sinternal => Sinternal);
-	 r : Ram Port map(
-	   clk => clk,
-		adr => AD,
-		we => WRram,
-		re => RDram,
-		data => D
-	 );
-	 IRoutt <= IR; 
-	 
+    r : Ram PORT MAP(
+        clk => clk,
+        adr => AD,
+        we => WRram,
+        re => RDram,
+        data => D
+    );
+
 END arch;
