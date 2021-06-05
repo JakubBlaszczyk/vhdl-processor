@@ -51,10 +51,10 @@ BEGIN
                   WHEN "000" =>
                      CASE IR(12 DOWNTO 11) IS
                         WHEN "00" =>
-                           IF (INT = '0') THEN
-                              state <= mFetch;
-                           ELSE
+                           IF INT = '1' THEN
                               state <= mInt;
+                           ELSE
+                              state <= mFetch;
                            END IF;
                         WHEN "01" => state <= mWait;
                         WHEN "10" => state <= mCall0;
@@ -80,7 +80,12 @@ BEGIN
                         WHEN "01111" => state <= mXorR;
                         WHEN "10000" => state <= mInR;
                         WHEN "10001" => state <= mOutR;
-                        WHEN OTHERS => state <= mFetch;
+                        WHEN OTHERS =>
+                           IF INT = '1' THEN
+                              state <= mInt;
+                           ELSE
+                              state <= mFetch;
+                           END IF;
                      END CASE;
                   WHEN "010" => state <= mSJump0;
                   WHEN "011" => state <= mLJump0;
@@ -93,9 +98,19 @@ BEGIN
                         WHEN "00" => state <= mMovSeg;
                         WHEN "01" => state <= mPopSeg;
                         WHEN "10" => state <= mPshSeg;
-                        WHEN OTHERS => state <= mFetch;
+                        WHEN OTHERS =>
+                           IF INT = '1' THEN
+                              state <= mInt;
+                           ELSE
+                              state <= mFetch;
+                           END IF;
                      END CASE;
-                  WHEN OTHERS => state <= mFetch;
+                  WHEN OTHERS =>
+                     IF INT = '1' THEN
+                        state <= mInt;
+                     ELSE
+                        state <= mFetch;
+                     END IF;
                END CASE;
                -- Wait
             WHEN mWait =>
