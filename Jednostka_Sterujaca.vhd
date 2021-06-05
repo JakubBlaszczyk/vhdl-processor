@@ -395,7 +395,7 @@ BEGIN
          WHEN mPush =>
             -- wpisanie wartości do stosu
             Sa <= "10";
-            Sba <= "01100";
+            Sba <= "00001";
             Sbb <= IR(4 DOWNTO 0);
             Sbc <= "00000";
             Sid <= "011";
