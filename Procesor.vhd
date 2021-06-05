@@ -4,7 +4,7 @@ USE ieee.numeric_std.ALL;
 
 ENTITY procesor IS
     PORT (
-        clk, reset : IN STD_LOGIC;
+        clk, reset, INT : IN STD_LOGIC;
 		  IRoutt : out std_logic_vector(15 downto 0)
     );
 END procesor;
@@ -87,7 +87,7 @@ ARCHITECTURE arch OF procesor IS
 
     SIGNAL AD : STD_LOGIC_VECTOR(19 DOWNTO 0);
     SIGNAL D : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL RDram, WRram, MIO, INTA, INT, Sinternal : STD_LOGIC;
+    SIGNAL RDram, WRram, MIO, INTA, Sinternal : STD_LOGIC;
 	 signal IRtemp : std_logic_vector(15 downto 0);
 BEGIN
 
