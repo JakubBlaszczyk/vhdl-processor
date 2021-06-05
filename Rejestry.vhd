@@ -43,22 +43,6 @@ BEGIN
     -- SP: Stos, ile jest na stosie
     -- ATMP: Tymczasowy rejestr
   BEGIN
-    IF (reset = '1') THEN
-      IR := "0000000000000000";
-      TMP := "0000000000000000";
-      R1 := "0000000000000000";
-      R2 := "0000000000000000";
-      R3 := "0000000000000000";
-      R4 := "0000000000000000";
-      R5 := "0000000000000000";
-      R6 := "0000000000000000";
-      R7 := "0000000000000000";
-      R8 := "0000000000000000";
-      AD := to_signed(0, ad'length);
-      PC := to_signed(0, pc'length);
-      SP := to_signed(0, sp'length);
-      ATMP := to_signed(0, atmp'length);
-    END IF;
     IF (clk'event AND clk = '1') THEN
       CASE Sid IS
         WHEN "001" =>
@@ -95,6 +79,22 @@ BEGIN
         WHEN "10001" => ATMP(31 DOWNTO 16) := SIGNED(BA);
         WHEN OTHERS => NULL;
       END CASE;
+		IF (reset = '1') THEN
+      IR := "0000000000000000";
+      TMP := "0000000000000000";
+      R1 := "0000000000000000";
+      R2 := "0000000000000000";
+      R3 := "0000000000000000";
+      R4 := "0000000000000000";
+      R5 := "0000000000000000";
+      R6 := "0000000000000000";
+      R7 := "0000000000000000";
+      R8 := "0000000000000000";
+      AD := to_signed(0, ad'length);
+      PC := to_signed(0, pc'length);
+      SP := to_signed(0, sp'length);
+      ATMP := to_signed(0, atmp'length);
+    END IF;
     END IF;
     CASE Sbb IS
       WHEN "00000" => BB <= DI;
