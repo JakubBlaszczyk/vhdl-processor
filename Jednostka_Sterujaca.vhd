@@ -125,6 +125,8 @@ BEGIN
                   -- skok jeśli signed
                ELSIF (IR(12 DOWNTO 11) = "11" AND (S = '1')) THEN
                   state <= mSJump1;
+               ELSIF (INT = '1') THEN
+                  state <= mInt;
                ELSE
                   state <= mFetch;
                END IF;
