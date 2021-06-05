@@ -38,14 +38,6 @@ BEGIN
           -- adres
           VARIABLE CS, DS, SS : STD_LOGIC_VECTOR(19 DOWNTO 0) := "00000000000000000000";
      BEGIN
-          IF reset = '1' THEN
-               CS := "00000000000000000000";
-               DS := "00000000000000000000";
-               SS := "00000000000000000000";
-               MBRin := "0000000000000000";
-               MBRout := "0000000000000000";
-               MAR := "00000000000000000000";
-          END IF;
           IF (clk'event AND clk = '1') THEN
                IF (Smar = '1') THEN
                     CASE (sseg) IS
@@ -103,6 +95,14 @@ BEGIN
                          D <= "ZZZZZZZZZZZZZZZZ";
                     END IF;
                END IF;
+					IF reset = '1' THEN
+               CS := "00000000000000000000";
+               DS := "00000000000000000000";
+               SS := "00000000000000000000";
+               MBRin := "0000000000000000";
+               MBRout := "0000000000000000";
+               MAR := "00000000000000000000";
+          END IF;
           END IF;
           DI <= MBRin;
           AD <= MAR;

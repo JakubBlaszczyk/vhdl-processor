@@ -4,7 +4,8 @@ USE ieee.numeric_std.ALL;
 
 ENTITY procesor IS
     PORT (
-        clk, reset : IN STD_LOGIC
+        clk, reset : IN STD_LOGIC;
+		  IRoutt : out std_logic_vector(15 downto 0)
     );
 END procesor;
 
@@ -68,7 +69,7 @@ ARCHITECTURE arch OF procesor IS
 	 component Ram is 
 	 PORT (
 		clk : IN STD_LOGIC;
-		adr : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		adr : IN STD_LOGIC_VECTOR(19 DOWNTO 0);
 		we, re : IN STD_LOGIC;
 		data : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0));
 	 end component;
@@ -79,14 +80,15 @@ ARCHITECTURE arch OF procesor IS
     SIGNAL Sid : STD_LOGIC_VECTOR(2 DOWNTO 0);
     SIGNAL DI, DOBA : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL IR : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    SIGNAL ADR, ADRram : STD_LOGIC_VECTOR(31 DOWNTO 0);
-
+    SIGNAL ADR : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	 
     SIGNAL BB, BC : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL LDF, C, Z, S : STD_LOGIC;
 
     SIGNAL AD : STD_LOGIC_VECTOR(19 DOWNTO 0);
     SIGNAL D : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL RDram, WRram, MIO, INTA, INT, Sinternal : STD_LOGIC;
+	 signal IRtemp : std_logic_vector(15 downto 0);
 BEGIN
 
     ar : ALU PORT MAP(
@@ -115,7 +117,7 @@ BEGIN
         IRout => IR);
     mem : MMU PORT MAP(
         clk => clk,
-        ADR => ADRram,
+        ADR => ADR,
         DO => DOBA,
         Smar => Smar,
         Smbr => Smbr,
@@ -130,7 +132,7 @@ BEGIN
         WR => WRram, RD => RDram);
     js : Jednostka_Sterujaca PORT MAP(
         clk => clk,
-        IR => IR,
+        IR => "0000000000000000",
         reset => reset,
         C => C,
         Z => Z,
@@ -153,10 +155,11 @@ BEGIN
         Sinternal => Sinternal);
 	 r : Ram Port map(
 	   clk => clk,
-		adr => ADRram,
+		adr => AD,
 		we => WRram,
 		re => RDram,
 		data => D
 	 );
-
+	 IRoutt <= IR; 
+	 
 END arch;
