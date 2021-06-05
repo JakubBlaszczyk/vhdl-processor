@@ -26,7 +26,7 @@ ARCHITECTURE rtl OF Jednostka_Sterujaca IS
       mSJump0, mSJump1, -- short jumps
       mLJump0, mLJump1, mLJump2, mLJump3, -- long jumps
       mFetch16, mMove16, mMoveHighAd, mAdd16, mSub16, mCmp16, mAnd16, mOr16, mXor16, -- argument st16
-      m70, mFetch32_1, -- niewiadoma
+      mFetch32_1, -- niewiadoma
       mFetch32_2, Move32, mRAdd, mAdd32, mSub32, mCmp32, mAnd32, mOr32, mXor32, mIn32, mOut32, -- argument add32
       mMovSeg, -- get data onto D line 
       mMovSegCs, mMovSegDs, mMovSegSs, -- mov info seg
