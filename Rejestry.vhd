@@ -54,10 +54,10 @@ BEGIN
       R6 := "0000000000000000";
       R7 := "0000000000000000";
       R8 := "0000000000000000";
-      AD := SIGNED("00000000000000000000000000000000");
-      PC := SIGNED("00000000000000000000000000000000");
-      SP := SIGNED("00000000000000000000000000000000");
-      ATMP := SIGNED("00000000000000000000000000000000");
+      AD := to_signed(0, ad'length);
+      PC := to_signed(0, pc'length);
+      SP := to_signed(0, sp'length);
+      ATMP := to_signed(0, atmp'length);
     END IF;
     IF (clk'event AND clk = '1') THEN
       CASE Sid IS
