@@ -7,9 +7,7 @@ ENTITY ram IS
 		clk : IN STD_LOGIC;
 		adr : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		we, re : IN STD_LOGIC;
-		dataIn : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-		dataOut : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
-	);
+		data : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0));
 END ram;
 
 ARCHITECTURE arch OF ram IS
@@ -18,12 +16,12 @@ ARCHITECTURE arch OF ram IS
 BEGIN
 	PROCESS (clk)
 	BEGIN
-		IF (clk'event AND clk = '1') then
+		IF (clk'event AND clk = '1') THEN
 			IF (re = '1') THEN
-				dataOut <= ram_block(to_integer(unsigned(adr)));
-				end if;
+				data <= ram_block(to_integer(unsigned(adr)));
+			END IF;
 			IF (we = '1') THEN
-				ram_block(to_integer(unsigned(adr))) <= dataIn;
+				ram_block(to_integer(unsigned(adr))) <= data;
 			END IF;
 		END IF;
 	END PROCESS;

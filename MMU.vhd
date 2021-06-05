@@ -4,12 +4,12 @@ USE ieee.numeric_std.ALL;
 
 ENTITY MMU IS
      PORT (
-	  clk : in std_logic;
+          clk : IN STD_LOGIC;
           ADR : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
           -- adres odczytu
           DO : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
           -- dane do zapisu z ALU
-          Smar, Smbr, WRin, RDin, Sinternal : IN STD_LOGIC;
+          Smar, Smbr, WRin, RDin, Sinternal, reset : IN STD_LOGIC;
           -- Smar: czy zapis adr
           -- Smbr: czy zapis do
           -- WRin: 0 - zapis do D wysokiej impedancji (nieustalony)
@@ -36,66 +36,74 @@ BEGIN
           -- dane in, out
           VARIABLE MAR : STD_LOGIC_VECTOR(19 DOWNTO 0);
           -- adres
-          VARIABLE CS, DS, SS : STD_LOGIC_VECTOR(19 DOWNTO 0);
+          VARIABLE CS, DS, SS : STD_LOGIC_VECTOR(19 DOWNTO 0) := "00000000000000000000";
      BEGIN
-	  IF (clk'event AND clk = '1') THEN
-          IF (Smar = '1') THEN
-               CASE (sseg) IS
-                    WHEN "01" => 
-						  Mar := CS;
-						  WHEN "10" => 
-						  Mar := DS;
-                    WHEN "11" => 
-						  Mar := SS;
-                    WHEN OTHERS =>
-                         Mar(3 DOWNTO 0) := "0000";
-                         Mar(19 DOWNTO 4) := ADR(31 DOWNTO 16);
-               END CASE;
-					Mar := STD_LOGIC_VECTOR(to_unsigned(to_integer(unsigned(Mar)) + to_integer(unsigned(ADR(15 DOWNTO 0))), Mar'length));    
-               MAR := ADR(19 DOWNTO 0);
+          IF reset = '1' THEN
+               CS := "00000000000000000000";
+               DS := "00000000000000000000";
+               SS := "00000000000000000000";
+               MBRin := "0000000000000000";
+               MBRout := "0000000000000000";
+               MAR := "00000000000000000000";
           END IF;
+          IF (clk'event AND clk = '1') THEN
+               IF (Smar = '1') THEN
+                    CASE (sseg) IS
+                         WHEN "01" =>
+                              Mar := CS;
+                         WHEN "10" =>
+                              Mar := DS;
+                         WHEN "11" =>
+                              Mar := SS;
+                         WHEN OTHERS =>
+                              Mar(3 DOWNTO 0) := "0000";
+                              Mar(19 DOWNTO 4) := ADR(31 DOWNTO 16);
+                    END CASE;
+                    Mar := STD_LOGIC_VECTOR(to_unsigned(to_integer(unsigned(Mar)) + to_integer(unsigned(ADR(15 DOWNTO 0))), Mar'length));
+                    MAR := ADR(19 DOWNTO 0);
+               END IF;
 
-          IF (Sinternal = '0') THEN
-               IF (Smbr = '1') THEN
-                    MBRout := DO;
-               END IF;
-               IF (RDin = '1') THEN
-                    MBRin := D;
-               END IF;
-               IF (WRin = '1') THEN
-                    D <= MBRout;
-               ELSE
-                    D <= "ZZZZZZZZZZZZZZZZ";
-               END IF;
-          ELSIF (Sinternal = '1') THEN
-               IF (Smbr = '1') THEN
-                    CASE(Sseg) IS
-                         WHEN "01" => MBRout := CS(19 downto 4);
-                         WHEN "10" => MBRout := DS(19 downto 4);
-                         WHEN "11" => MBRout := SS(19 downto 4);
-                         WHEN OTHERS => NULL;
-                    END CASE;
-               END IF;
-               IF (RDin = '1') THEN
-                    CASE(Sseg) IS
-                         WHEN "01" => CS(19 DOWNTO 4) := D;
-                         WHEN "10" => DS(19 DOWNTO 4) := D;
-                         WHEN "11" => SS(19 DOWNTO 4) := D;
-                         WHEN OTHERS => NULL;
-                    END CASE;
-               END IF;
-               IF (WRin = '1') THEN
-                    CASE(Sseg) IS
-                         WHEN "01" => D <= CS(19 downto 4);
-                         WHEN "10" => D <= DS(19 downto 4);
-                         WHEN "11" => D <= SS(19 downto 4);
-                         WHEN OTHERS => D <= "ZZZZZZZZZZZZZZZZ";
-                    END CASE;
-						 else 
-						 D <= "ZZZZZZZZZZZZZZZZ";
+               IF (Sinternal = '0') THEN
+                    IF (Smbr = '1') THEN
+                         MBRout := DO;
+                    END IF;
+                    IF (RDin = '1') THEN
+                         MBRin := D;
+                    END IF;
+                    IF (WRin = '1') THEN
+                         D <= MBRout;
+                    ELSE
+                         D <= "ZZZZZZZZZZZZZZZZ";
+                    END IF;
+               ELSIF (Sinternal = '1') THEN
+                    IF (Smbr = '1') THEN
+                         CASE(Sseg) IS
+                              WHEN "01" => MBRout := CS(19 DOWNTO 4);
+                              WHEN "10" => MBRout := DS(19 DOWNTO 4);
+                              WHEN "11" => MBRout := SS(19 DOWNTO 4);
+                              WHEN OTHERS => NULL;
+                         END CASE;
+                    END IF;
+                    IF (RDin = '1') THEN
+                         CASE(Sseg) IS
+                              WHEN "01" => CS(19 DOWNTO 4) := D;
+                              WHEN "10" => DS(19 DOWNTO 4) := D;
+                              WHEN "11" => SS(19 DOWNTO 4) := D;
+                              WHEN OTHERS => NULL;
+                         END CASE;
+                    END IF;
+                    IF (WRin = '1') THEN
+                         CASE(Sseg) IS
+                              WHEN "01" => D <= CS(19 DOWNTO 4);
+                              WHEN "10" => D <= DS(19 DOWNTO 4);
+                              WHEN "11" => D <= SS(19 DOWNTO 4);
+                              WHEN OTHERS => D <= "ZZZZZZZZZZZZZZZZ";
+                         END CASE;
+                    ELSE
+                         D <= "ZZZZZZZZZZZZZZZZ";
+                    END IF;
                END IF;
           END IF;
-end if;
           DI <= MBRin;
           AD <= MAR;
           WR <= WRin;

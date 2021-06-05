@@ -3,7 +3,7 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 ENTITY Rejestry IS
   PORT (
-    clk : IN STD_LOGIC;
+    clk, reset : IN STD_LOGIC;
     DI : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     -- wejście z pamięci
     BA : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
@@ -43,6 +43,22 @@ BEGIN
     -- SP: Stos, ile jest na stosie
     -- ATMP: Tymczasowy rejestr
   BEGIN
+    IF (reset = '1') THEN
+      IR := "0000000000000000";
+      TMP := "0000000000000000";
+      R1 := "0000000000000000";
+      R2 := "0000000000000000";
+      R3 := "0000000000000000";
+      R4 := "0000000000000000";
+      R5 := "0000000000000000";
+      R6 := "0000000000000000";
+      R7 := "0000000000000000";
+      R8 := "0000000000000000";
+      AD := SIGNED("00000000000000000000000000000000");
+      PC := SIGNED("00000000000000000000000000000000");
+      SP := SIGNED("00000000000000000000000000000000");
+      ATMP := SIGNED("00000000000000000000000000000000");
+    END IF;
     IF (clk'event AND clk = '1') THEN
       CASE Sid IS
         WHEN "001" =>

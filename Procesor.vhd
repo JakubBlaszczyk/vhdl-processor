@@ -24,7 +24,7 @@ ARCHITECTURE arch OF procesor IS
 
     COMPONENT Rejestry IS
         PORT (
-            clk : IN STD_LOGIC;
+            clk, reset : IN STD_LOGIC;
             DI : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
             BA : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
             Sbb : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
@@ -41,15 +41,15 @@ ARCHITECTURE arch OF procesor IS
 
     COMPONENT MMU IS
         PORT (
-		  clk : in std_logic;
-            ADR : IN std_logic_vector(31 DOWNTO 0);
-          DO : IN std_logic_vector(15 DOWNTO 0);
-          Smar, Smbr, WRin, RDin, Sinternal : IN STD_LOGIC;
-			 Sseg : in std_logic_vector(1 downto 0);
-          AD : OUT std_logic_vector (19 DOWNTO 0);
-          D : INOUT std_logic_vector(15 DOWNTO 0);
-          DI : OUT std_logic_vector(15 DOWNTO 0);
-          WR, RD : OUT STD_LOGIC
+            clk : IN STD_LOGIC;
+            ADR : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+            DO : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+            Smar, Smbr, WRin, RDin, Sinternal, reset : IN STD_LOGIC;
+            Sseg : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+            AD : OUT STD_LOGIC_VECTOR (19 DOWNTO 0);
+            D : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+            DI : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+            WR, RD : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -93,6 +93,7 @@ BEGIN
         S => S);
     reg : Rejestry PORT MAP(
         clk => clk,
+        reset => reset,
         DI => DI,
         BA => DOBA,
         Sbb => Sbb,
@@ -104,16 +105,17 @@ BEGIN
         BC => BC,
         ADR => ADR,
         IRout => IR);
-    mem: MMU PORT MAP(
-		  clk => clk,
+    mem : MMU PORT MAP(
+        clk => clk,
         ADR => ADR,
         DO => DOBA,
         Smar => Smar,
         Smbr => Smbr,
         WRin => WR,
         RDin => RD,
-		  Sinternal => Sinternal,
-		  Sseg => Sseg,
+        Sinternal => Sinternal,
+        reset => reset,
+        Sseg => Sseg,
         AD => AD, -- RAM
         D => D, -- RAM
         DI => DI,
@@ -126,14 +128,14 @@ BEGIN
         Z => Z,
         S => S,
         INT => INT,
-		  
+
         Salu => Salu,
         Sbb => Sbb,
         Sbc => Sbc,
         Sba => Sba,
         Sid => Sid,
         Sa => Sa,
-		  Sseg => Sseg,
+        Sseg => Sseg,
         LDF => LDF,
         Smar => Smar,
         Smbr => Smbr,
@@ -141,6 +143,6 @@ BEGIN
         RD => RD,
         INTA => INTA,
         MIO => MIO,
-		  Sinternal => Sinternal);
+        Sinternal => Sinternal);
 
 END arch;
