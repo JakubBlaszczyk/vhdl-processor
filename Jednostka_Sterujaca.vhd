@@ -185,21 +185,36 @@ BEGIN
           END CASE;
         WHEN mMovSeg =>
           CASE (IR(10 DOWNTO 9)) IS
-            WHEN "00" => state <= mFetch;
+            WHEN "00" => 
+            IF (INT = '1') THEN
+            state <= mInt;
+          ELSE
+            state <= mFetch;
+            end if;
             WHEN "01" => state <= mMovSegCs;
             WHEN "10" => state <= mMovSegDs;
             WHEN "11" => state <= mMovSegSs;
           END CASE;
         WHEN mPopSeg =>
           CASE (IR(10 DOWNTO 9)) IS
-            WHEN "00" => state <= mFetch;
+            WHEN "00" => 
+            IF (INT = '1') THEN
+            state <= mInt;
+          ELSE
+            state <= mFetch;
+            end if;
             WHEN "01" => state <= mPopCs;
             WHEN "10" => state <= mPopDs;
             WHEN "11" => state <= mPopSs;
           END CASE;
         WHEN mPshSeg =>
           CASE (IR(10 DOWNTO 9)) IS
-            WHEN "00" => state <= mFetch;
+            WHEN "00" => 
+            IF (INT = '1') THEN
+            state <= mInt;
+          ELSE
+            state <= mFetch;
+            end if;
             WHEN "01" => state <= mPshSegCs;
             WHEN "10" => state <= mPshSegDs;
             WHEN "11" => state <= mPshSegSs;
