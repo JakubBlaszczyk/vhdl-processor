@@ -1174,7 +1174,7 @@ BEGIN
         Salu <= "00110";
         LDF <= '1';
         INTA <= '0';
-        -- IN ADD, IO(AD)???
+        -- IN ADD, IO(AD)
       WHEN mIn32 =>
         Sa <= "11";
         Sba <= IR(4 DOWNTO 0);
@@ -1191,7 +1191,7 @@ BEGIN
         Salu <= "00110";
         LDF <= '1';
         INTA <= '0';
-        -- Out IO(R)???
+        -- Out IO(R)
       WHEN mOut32 =>
         Sa <= "11";
         Sba <= IR(4 DOWNTO 0);
@@ -1201,8 +1201,8 @@ BEGIN
         MIO <= '1';
         Smar <= '1';
         Smbr <= '0';
-        WR <= '0';
-        RD <= '1';
+        WR <= '1';
+        RD <= '0';
         Sseg <= "00";
         Sinternal <= '0';
         Salu <= "00110";
